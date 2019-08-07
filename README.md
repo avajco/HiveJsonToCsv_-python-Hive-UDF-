@@ -10,16 +10,16 @@ Goals
  * 1: for create CSV files
  * 0: for write data set to console
  
- !!note!! generating files take time because it has to run mutiple jobs to write fields into csv
+ !!note!! generating files take time because it has to run mutiple jobs to write fields into csv.
 
-sample run to create CSV files.
+# sample run to create CSV files.
 
 add the pyhton script
 > add file *python_script*;
 > SELECT TRANSFORM(*column*) USING '*python_script 1*' as (*column_alias*)from *hive_table*;
 
 
-sample run to print output to screen.
+# sample run to print output to screen.
 
 add the pyhton script
 > add file *python_script*;
