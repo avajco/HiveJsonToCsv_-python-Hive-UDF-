@@ -16,6 +16,7 @@ Goals
 
 add the pyhton script
 > add file *python_script*;
+
 > SELECT TRANSFORM(*column*) USING '*python_script 1*' as (*column_alias*)from *hive_table*;
 
 
@@ -23,6 +24,7 @@ add the pyhton script
 
 add the pyhton script
 > add file *python_script*;
+
 > SELECT TRANSFORM(*column*) USING '*python_script 0*' as (*column_alias*)from *hive_table*;
 
 **note** run cmd from local of python script **note**
