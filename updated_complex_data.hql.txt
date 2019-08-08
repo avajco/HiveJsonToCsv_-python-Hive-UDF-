@@ -1,0 +1,40 @@
+use staging;
+add jar hive-hcatalog-core-1.1.0-cdh5.13.1.jar;
+create table message(
+	header_data struct<
+	eventType:string,
+	message:map<string,
+	struct<eventTime:string, skillName:string, pocName:string, ani:string, actionSequence:string
+	,skillNo:string,contactId:string,masterContactId:string,pocId:string,busNo:string,dnis:string>
+	>,	
+	masterContactId:string
+	>, 
+	action_data struct<
+	eventType:string,
+	message:map<string,
+	struct<selection:string,inputMethod:string,skillNo:string,contactId:string,skillName:string
+	,masterContactId:string,busNo:string,actionName:string,eventTime:string,actionGuid:string,
+	actionSequence:string,masterId:string,scriptName:string,actionId:string,
+	prompt:struct<promtsRequestedToBePlayed:string ,resturnVariable:string>
+	,customData:map<string,map<string,string>>
+	>
+	>,
+	masterContactId:string
+	>,
+	completed_data struct<
+	eventType:string,
+	message:map<string,
+	struct<eventTime:string,skillName:string,masterContactId:string,clusterName:string,
+	actionSequence:string,skillNo:string,contactId:string,numberOfLoggedActions:string,busNo:string>
+	>,
+	masterContactId:string
+	>,
+	footer_data struct<
+	eventType:string,
+	message:map<string,
+	struct<eventTime:string,skillName:string,endReason:string,actionSequence:string,skillNo:string,
+	contactId:string,masterContactId:string,busNo:string>
+	>,
+	masterContactId:string
+	>
+) ROW FORMAT SERDE 'org.apache.hive.hcatalog.data.JsonSerDe';
